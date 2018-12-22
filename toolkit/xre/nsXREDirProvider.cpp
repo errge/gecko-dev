@@ -424,7 +424,7 @@ nsXREDirProvider::GetFile(const char* aProperty, bool* aPersistent,
 #if defined(XP_MACOSX)
       rv = localDir->AppendNative(NS_LITERAL_CSTRING("Mozilla"));
 #else
-      rv = localDir->AppendNative(NS_LITERAL_CSTRING(".mozilla"));
+      rv = localDir->AppendNative(NS_LITERAL_CSTRING(".gregzilla"));
 #endif
     }
     if (NS_SUCCEEDED(rv)) {
@@ -1744,7 +1744,7 @@ nsXREDirProvider::AppendSysUserExtensionPath(nsIFile* aFile)
 
 #elif defined(XP_UNIX)
 
-  static const char* const sXR = ".mozilla";
+  static const char* const sXR = ".gregzilla";
   rv = aFile->AppendNative(nsDependentCString(sXR));
   NS_ENSURE_SUCCESS(rv, rv);
 
@@ -1777,7 +1777,7 @@ nsXREDirProvider::AppendSysUserExtensionsDevPath(nsIFile* aFile)
 
 #elif defined(XP_UNIX)
 
-  static const char* const sXR = ".mozilla";
+  static const char* const sXR = ".gregzilla";
   rv = aFile->AppendNative(nsDependentCString(sXR));
   NS_ENSURE_SUCCESS(rv, rv);
 
@@ -1866,7 +1866,7 @@ nsXREDirProvider::AppendProfilePath(nsIFile* aFile, bool aLocal)
   }
   else {
     if (!vendor.IsEmpty()) {
-      folder.Append(vendor);
+      folder.Append("gregzilla");
       ToLowerCase(folder);
 
       rv = aFile->AppendNative(folder);

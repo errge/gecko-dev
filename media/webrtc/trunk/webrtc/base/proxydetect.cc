@@ -404,7 +404,7 @@ bool GetFirefoxProfilePath(Pathname* path) {
     return false;
   }
   path->SetFolder(std::string(user_home));
-  path->AppendFolder(".mozilla");
+  path->AppendFolder(".gregzilla");
   path->AppendFolder("firefox");
 #endif  // WEBRTC_WIN
   return true;
