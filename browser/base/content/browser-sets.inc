@@ -118,6 +118,8 @@
          command="cmd_newNavigator"
          modifiers="accel" reserved="true"/>
     <key id="key_newNavigatorTab" key="&tabCmd.commandkey;" modifiers="accel" oncommand="BrowserHome({ button: 1 });" reserved="true"/>
+    <key id="gregzilla_prevTab" key="p" modifiers="accel,alt" oncommand="gBrowser.tabContainer.advanceSelectedTab(-1, true);" reserved="true"/>
+    <key id="gregzilla_prevTab" key="n" modifiers="accel,alt" oncommand="gBrowser.tabContainer.advanceSelectedTab(1, true);" reserved="true"/>
     <key id="focusURLBar" key="&openCmd.commandkey;" command="Browser:OpenLocation"
          modifiers="accel"/>
 #ifndef XP_MACOSX
