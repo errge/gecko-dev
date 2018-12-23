@@ -117,8 +117,7 @@
          key="&newNavigatorCmd.key;"
          command="cmd_newNavigator"
          modifiers="accel" reserved="true"/>
-    <key id="key_newNavigatorTab" key="&tabCmd.commandkey;" modifiers="accel"
-         command="cmd_newNavigatorTabNoEvent" reserved="true"/>
+    <key id="key_newNavigatorTab" key="&tabCmd.commandkey;" modifiers="accel" oncommand="BrowserHome({ button: 1 });" reserved="true"/>
     <key id="focusURLBar" key="&openCmd.commandkey;" command="Browser:OpenLocation"
          modifiers="accel"/>
 #ifndef XP_MACOSX

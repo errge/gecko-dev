@@ -86,6 +86,9 @@ static const RedirEntry kRedirMap[] = {
   // Actual activity stream URL for home and newtab are set in channel creation
   { "home", "about:blank", ACTIVITY_STREAM_FLAGS },
   { "newtab", "about:blank", ACTIVITY_STREAM_FLAGS },
+  // // ERRGE
+  // { "home", "file:///home/errge/hoplax/hoplax/index.html", nsIAboutModule::ALLOW_SCRIPT },
+  // { "newtab", "about:blank", nsIAboutModule::ALLOW_SCRIPT },
   { "welcome", "about:blank",
     nsIAboutModule::URI_MUST_LOAD_IN_CHILD |
     nsIAboutModule::URI_CAN_LOAD_IN_PRIVILEGED_CHILD |
@@ -159,6 +162,7 @@ AboutRedirector::NewChannel(nsIURI* aURI,
     if (!strcmp(path.get(), redir.id)) {
       nsAutoCString url;
 
+      // ERRGE: maybe we should comment this all out!
       // Let the aboutNewTabService decide where to redirect for about:home and
       // enabled about:newtab. Disabledx about:newtab page uses fallback.
       if (path.EqualsLiteral("home") ||
@@ -169,6 +173,7 @@ AboutRedirector::NewChannel(nsIURI* aURI,
         rv = aboutNewTabService->GetDefaultURL(url);
         NS_ENSURE_SUCCESS(rv, rv);
       }
+      // ERRGE: end of maybe commenting
 
       if (path.EqualsLiteral("welcome")) {
         nsCOMPtr<nsIAboutNewTabService> aboutNewTabService =

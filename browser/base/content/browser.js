@@ -2348,6 +2348,19 @@ function BrowserOpenTab(event) {
   }, "browser-open-newtab-start");
 }
 
+// function GregzillaNewTab() {
+//   // BrowserOpenTab();
+//   let homePage = HomePage.get();
+//   let where = "tab";
+//   // gBrowser.addWebTab(homePage, {
+//   //   inBackground: false
+//   // });
+//   gBrowser.loadTabs([homePage], {
+//     triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal()
+//     // triggeringPrincipal: Services.scriptSecurityManager.createNullPrincipal(),
+//   });
+// };
+
 var gLastOpenDirectory = {
   _lastDir: null,
   get path() {
