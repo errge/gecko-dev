@@ -72,7 +72,7 @@ bool SharedMemory::AppendPosixShmPrefix(std::string* str, pid_t pid)
 #endif // OS_LINUX
   // Hopefully the "implementation defined" name length limit is long
   // enough for this.
-  StringAppendF(str, "org.mozilla.ipc.%d.", static_cast<int>(pid));
+  StringAppendF(str, "org.gregzilla.ipc.%d.", static_cast<int>(pid));
   return true;
 #endif // !ANDROID && !SHM_ANON
 }
